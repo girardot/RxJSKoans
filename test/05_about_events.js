@@ -15,11 +15,12 @@ test('the main event', function () {
   e.emit('change', 'R');
   e.emit('change', 'x');
   e.emit('change', 'J');
+  e.emit('changeOther', 'J');
   e.emit('change', 'S');
 
   subscription.dispose();
 
   e.emit('change', '!');
 
-  equal(__, received.join(''));
+  equal('RxJS', received.join(''));
 });
